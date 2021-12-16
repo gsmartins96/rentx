@@ -12,12 +12,14 @@ import {
   Period,
   Price,
   About,
-  Acessories
+  Acessories,
+  Footer
 } from './styles'
 
 import { BackButton } from '../../components/BackButton'
 import { ImageSlider } from '../../components/ImageSlider'
 import { Accessory } from '../../components/Accessory'
+import { Button } from '../../components/Button'
 
 import speedSvg from '../../assets/speed.svg';
 import accelerationSvg from '../../assets/acceleration.svg';
@@ -66,6 +68,10 @@ export function CardDetails(){
           nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
         </About>
       </Content>
+
+      <Footer>
+        <Button title="Confirmar" color="green" />
+      </Footer>
     </Container>
   )
 }
