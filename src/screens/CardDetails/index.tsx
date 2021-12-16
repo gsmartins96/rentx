@@ -11,12 +11,21 @@ import {
   Rent,
   Period,
   Price,
-  About
+  About,
+  Acessories
 } from './styles'
 
 import { BackButton } from '../../components/BackButton'
 import { ImageSlider } from '../../components/ImageSlider'
+import { Accessory } from '../../components/Accessory'
 
+import speedSvg from '../../assets/speed.svg';
+import accelerationSvg from '../../assets/acceleration.svg';
+import forceSvg from '../../assets/force.svg';
+import gasolineSvg from '../../assets/gasoline.svg';
+import exchangeSvg from '../../assets/exchange.svg';
+import peopleSvg from '../../assets/people.svg';
+ 
 export function CardDetails(){
   return (
     <Container>
@@ -42,11 +51,19 @@ export function CardDetails(){
             <Price>R$ 320</Price>
           </Rent>
         </Details>
+      
+        <Acessories>
+          <Accessory name="380 Km/h" icon={speedSvg} />
+          <Accessory name="3.2s" icon={accelerationSvg} />
+          <Accessory name="600 Whp" icon={forceSvg} />
+          <Accessory name="Gasolina" icon={gasolineSvg} />
+          <Accessory name="Auto" icon={exchangeSvg} />
+          <Accessory name="4 Pessoas" icon={peopleSvg} />
+        </Acessories>
 
         <About>
-          Este automóvel é meu sonho de consumo mais alcançavel nos proximo 5~10 anos
-          dependendo somente do quanto eu sou bom no que faço e no quanto estou disposto
-          a se dedicar para realizar meus sonhos.
+          Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
+          nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
         </About>
       </Content>
     </Container>
