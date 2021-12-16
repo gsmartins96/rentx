@@ -67,21 +67,6 @@ export function CardDetails(){
           Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
           nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
         </About>
-
-        <About>
-          Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
-          nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
-        </About>
-
-        <About>
-          Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
-          nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
-        </About>
-
-        <About>
-          Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
-          nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
-        </About>
       </ContentScrollView>
 
       <Footer>
