@@ -3,7 +3,7 @@ import {
   Container,
   Header,
   CarImages,
-  Content,
+  ContentScrollView,
   Details,
   Description,
   Brand,
@@ -41,7 +41,7 @@ export function CardDetails(){
         />
       </CarImages>
 
-      <Content>
+      <ContentScrollView>
         <Details>
           <Description>
             <Brand>BMW</Brand>
@@ -67,10 +67,25 @@ export function CardDetails(){
           Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
           nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
         </About>
-      </Content>
+
+        <About>
+          Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
+          nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
+        </About>
+
+        <About>
+          Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
+          nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
+        </About>
+
+        <About>
+          Este é um automóvel exotico, perfeito e meu sonho de consumo com um valor mais alcançavel
+          nos próximos anos. "Bmzinha top das galaxya, vem ni min!".
+        </About>
+      </ContentScrollView>
 
       <Footer>
-        <Button title="Confirmar" color="green" />
+        <Button title="Confirmar" />
       </Footer>
     </Container>
   )
