@@ -1,4 +1,6 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { useTheme } from 'styled-components'
 import {
   Container,
   Header,
@@ -28,7 +30,14 @@ import gasolineSvg from '../../assets/gasoline.svg';
 import exchangeSvg from '../../assets/exchange.svg';
 import peopleSvg from '../../assets/people.svg';
  
-export function CardDetails(){
+export function CarDetails(){
+  const navigation = useNavigation<any>();
+  const theme = useTheme()
+
+  function handleConfirmRental(){
+    navigation.navigate('Scheduling');
+  }
+
   return (
     <Container>
       <Header>
@@ -70,7 +79,7 @@ export function CardDetails(){
       </ContentScrollView>
 
       <Footer>
-        <Button title="Confirmar" />
+        <Button title="Escolher período do aluguel" onPress={handleConfirmRental} />
       </Footer>
     </Container>
   )

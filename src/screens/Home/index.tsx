@@ -1,5 +1,6 @@
 import React from 'react'
 import { StatusBar } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { RFValue } from 'react-native-responsive-fontsize'
 import {
   Container,
@@ -13,6 +14,7 @@ import Logo from '../../assets/logo.svg';
 import { Car } from '../../components/Car';
 
 export function Home(){
+  const navigation = useNavigation<any>()
   const carDataOne = {
     brand: 'bmw',
     name: 'M4 CS',
@@ -21,6 +23,10 @@ export function Home(){
       price: 320
     },
     thumbnail: 'https://static.wikia.nocookie.net/forzamotorsport/images/1/12/HOR_XB1_BMW_M4_14.png/revision/latest?cb=20191111201655'
+  }
+
+  function handleNavigateCarDetails(){
+    navigation.navigate('CarDetails');
   }
 
   return (
@@ -42,7 +48,7 @@ export function Home(){
       <CarList 
         data={[1,2,3,4,5,6,7,8,9]}
         keyExtractor={item => String(item)}
-        renderItem={({ item }) => <Car data={carDataOne} />}
+        renderItem={({ item }) => <Car data={carDataOne} onPress={handleNavigateCarDetails} />}
       />
     </Container>
   )

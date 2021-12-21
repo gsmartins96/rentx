@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 import { useTheme } from 'styled-components'
 import { Feather } from '@expo/vector-icons'
 import { RFValue } from 'react-native-responsive-fontsize'
@@ -41,7 +42,12 @@ import exchangeSvg from '../../assets/exchange.svg';
 import peopleSvg from '../../assets/people.svg';
  
 export function SchedulingDetails(){
+  const navigation = useNavigation<any>();
   const theme = useTheme()
+
+  function handleConfirmRental(){
+    navigation.navigate('SchedulingComplete');
+  }
 
   return (
     <Container>
@@ -108,7 +114,7 @@ export function SchedulingDetails(){
       </ContentScrollView>
 
       <Footer>
-        <Button title="Confirmar" />
+        <Button title="Alugar agora" color={theme.colors.success} onPress={handleConfirmRental} />
       </Footer>
     </Container>
   )
