@@ -32,7 +32,6 @@ import peopleSvg from '../../assets/people.svg';
  
 export function CarDetails(){
   const navigation = useNavigation<any>();
-  const theme = useTheme()
 
   function handleConfirmRental(){
     navigation.navigate('Scheduling');
@@ -41,7 +40,7 @@ export function CarDetails(){
   return (
     <Container>
       <Header>
-        <BackButton onPress={() => {}}/>
+        <BackButton />
       </Header>
 
       <CarImages>

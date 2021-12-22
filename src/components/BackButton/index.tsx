@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 import { MaterialIcons } from '@expo/vector-icons'
 import { BorderlessButtonProps } from 'react-native-gesture-handler'
 import { useTheme } from 'styled-components'
@@ -12,9 +13,14 @@ interface Props extends BorderlessButtonProps {
 
 export function BackButton({ color, ...rest } : Props){
   const theme = useTheme();
+  const navigation = useNavigation()
+
+  function handleNavigate(){
+    navigation.goBack();
+  }
 
   return (
-    <Container {...rest} >
+    <Container {...rest} onPress={handleNavigate} >
       <MaterialIcons 
         name="chevron-left" 
         size={24} 
