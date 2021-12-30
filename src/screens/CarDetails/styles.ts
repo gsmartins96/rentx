@@ -46,6 +46,8 @@ export const Brand = styled.Text`
   font-family: ${({ theme }) => theme.fonts.secundary_500};
   font-size: ${RFValue(10)}px;
   color: ${({ theme }) => theme.colors.text_detail};
+
+  text-transform: uppercase;
 `;
 
 export const Name = styled.Text`
