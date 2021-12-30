@@ -44,14 +44,10 @@ export function Scheduling(){
   const theme = useTheme();
 
   function handleConfirmRental(){
-    if(!rentalPeriod.startFormatted || !rentalPeriod.endFormatted){
-      Alert.alert('Selecione um período para alugar o carro');
-    } else {
-      navigation.navigate('SchedulingDetails', {
-        car,
-        dates: Object.keys(markedDate)
-      });
-    }
+    navigation.navigate('SchedulingDetails', {
+      car,
+      dates: Object.keys(markedDate)
+    });
   }
 
   function handleChangeDate(date: DayProps){
@@ -114,7 +110,7 @@ export function Scheduling(){
       </Content>
 
       <Footer>
-        <Button title='Confirmar' onPress={handleConfirmRental} />
+        <Button title='Confirmar' onPress={handleConfirmRental} enabled={!!rentalPeriod.endFormatted} />
       </Footer>
     </Container>
   )
