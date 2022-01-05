@@ -27,8 +27,8 @@ import { CarDTO } from '../../dtos/CarsDTO'
 import { Load } from '../../components/Load';
 
 interface CarProps{
-  id: string;
-  user_id: string;
+  id: number;
+  user_id: number;
   car: CarDTO;
   startDate: string;
   endDate: string;
@@ -76,7 +76,7 @@ export function MyCars(){
 
           <FlatList
             data={cars}
-            keyExtractor={item => item.id}
+            keyExtractor={item => String(item.id)}
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
               <CarWrapper>
