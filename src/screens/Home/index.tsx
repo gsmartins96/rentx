@@ -22,11 +22,13 @@ import {
 
 import { Car } from '../../components/Car';
 import { Load } from '../../components/Load';
-import Logo from '../../assets/logo.svg';
+import { LoadAnimation } from '../../components/LoadAnimation';
 
-import api from '../../services/api';
+import Logo from '../../assets/logo.svg';
 import { CarDTO } from '../../dtos/CarsDTO';
 import theme from '../../styles/theme';
+
+import api from '../../services/api';
 
 const ButtonAnimated = Animated.createAnimatedComponent(RectButton)
 
@@ -109,7 +111,7 @@ export function Home(){
       </Header>
 
       {loading ? 
-        <Load /> 
+        <LoadAnimation /> 
         : 
         <CarList
           data={cars}
