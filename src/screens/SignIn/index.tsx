@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
   StatusBar, 
   KeyboardAvoidingView, 
@@ -21,6 +21,9 @@ import { InputPassword } from '../../components/InputPassword'
 import theme from '../../styles/theme'
 
 export function SignIn(){
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <KeyboardAvoidingView behavior='position' enabled >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -41,12 +44,15 @@ export function SignIn(){
               keyboardType='email-address'
               autoCorrect={false}
               autoCapitalize='none'
+              value={email}
+              onChangeText={setEmail}
             />
             <InputPassword 
               iconName='lock'
               placeholder='Senha'
+              value={password}
+              onChangeText={setPassword}
             />
-            
           </Form>
 
 
