@@ -13,15 +13,12 @@ import {
 
 import { BackButton } from '../../../components/BackButton'
 import { Bullet } from '../../../components/Bullet'
-import { Input } from '../../../components/Input'
+import { InputPassword } from '../../../components/InputPassword'
 import { Button } from '../../../components/Button'
+import theme from '../../../styles/theme'
 
-export function SignUpFirstStep(){
+export function SignUpSecondStep(){
   const navigation = useNavigation<any>();
-
-  function handleNextStep(){
-    navigation.navigate('SignUpSecondStep')
-  }
   
   return (
     <KeyboardAvoidingView behavior='position' enabled >
@@ -30,8 +27,8 @@ export function SignUpFirstStep(){
           <Header>
             <BackButton />
             <Steps>
-              <Bullet active />
               <Bullet />
+              <Bullet active />
             </Steps>
           </Header>
 
@@ -44,28 +41,20 @@ export function SignUpFirstStep(){
           </SubTitle>
 
           <Form>
-            <FormTitle>1. Dados</FormTitle>
-            <Input 
-              iconName="user"
-              placeholder='Nome'
-              autoCorrect={false}
-            />
-            <Input 
-              iconName="mail"
-              placeholder='E-mail'
-              keyboardType='email-address'
-              autoCorrect={false}
-              autoCapitalize='none'
-            />
-            <Input 
-              iconName="credit-card"
-              placeholder='CNH'
-              keyboardType='numeric'
-            />
+            <FormTitle>2. Senha</FormTitle>
+
+            <InputPassword 
+              iconName='lock'
+              placeholder='Senha'
+            />      
+            <InputPassword 
+              iconName='lock'
+              placeholder='Repetir senha'
+            />      
 
           <Button 
-            title="Próximo"
-            onPress={handleNextStep}
+            title="Criar Conta"
+            color={theme.colors.success}
           />
 
           </Form>
