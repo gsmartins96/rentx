@@ -29,7 +29,17 @@ export function SignIn(){
       <Form>
         <Input 
           iconName='mail'
+          placeholder='E-mail'
+          keyboardType='email-address'
+          autoCorrect={false}
+          autoCapitalize='none'
         />
+        <Input 
+          iconName='lock'
+          placeholder='Senha'
+          
+        />
+        
       </Form>
 
 
@@ -37,7 +47,7 @@ export function SignIn(){
         <Button 
           title="Login"
           onPress={() => {}}
-          enabled={false}
+          enabled={true}
           loading={false}
         />
         <Button 
