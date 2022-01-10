@@ -4,11 +4,14 @@ import {
   Container,
   Header,
   Title,
+  Form,
   SubTitle,
-  Footer
+  Footer,
 } from './styles'
 
 import { Button } from '../../components/Button'
+import { Input } from '../../components/Input'
+
 import theme from '../../styles/theme'
 
 export function SignIn(){
@@ -22,6 +25,13 @@ export function SignIn(){
           uma experiência incrível
         </SubTitle>
       </Header>
+
+      <Form>
+        <Input 
+          iconName='mail'
+        />
+      </Form>
+
 
       <Footer>
         <Button 
