@@ -13,9 +13,10 @@ interface Props extends RectButtonProps {
   color?: string;
   enabled?: boolean;
   loading?: boolean;
+  light?: boolean; 
 }
 
-export function Button({ title, color, enabled = true, loading = false, ...rest } : Props){
+export function Button({ title, color, enabled = true, loading = false, light = false, ...rest } : Props){
   return (
     <Container 
       {...rest } 
@@ -25,7 +26,7 @@ export function Button({ title, color, enabled = true, loading = false, ...rest 
     >
       {loading 
         ? <ActivityIndicator color={theme.colors.shape} />
-        : <Title>{title}</Title>
+        : <Title light={light}>{title}</Title>
       }
     </Container>
   )
