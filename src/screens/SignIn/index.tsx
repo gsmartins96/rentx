@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar } from 'react-native'
+import { StatusBar, KeyboardAvoidingView } from 'react-native'
 import {
   Container,
   Header,
@@ -17,48 +17,50 @@ import theme from '../../styles/theme'
 
 export function SignIn(){
   return (
-    <Container>
-      <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
-      <Header>
-        <Title>Estamos {'\n'}quase lá.</Title>
-        <SubTitle>
-          Faça seu login para começar {'\n'}
-          uma experiência incrível
-        </SubTitle>
-      </Header>
+    <KeyboardAvoidingView behavior='position' enabled >
+      <Container>
+        <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
+        <Header>
+          <Title>Estamos {'\n'}quase lá.</Title>
+          <SubTitle>
+            Faça seu login para começar {'\n'}
+            uma experiência incrível
+          </SubTitle>
+        </Header>
 
-      <Form>
-        <Input 
-          iconName='mail'
-          placeholder='E-mail'
-          keyboardType='email-address'
-          autoCorrect={false}
-          autoCapitalize='none'
-        />
-        <InputPassword 
-          iconName='lock'
-          placeholder='Senha'
-        />
-        
-      </Form>
+        <Form>
+          <Input 
+            iconName='mail'
+            placeholder='E-mail'
+            keyboardType='email-address'
+            autoCorrect={false}
+            autoCapitalize='none'
+          />
+          <InputPassword 
+            iconName='lock'
+            placeholder='Senha'
+          />
+          
+        </Form>
 
 
-      <Footer>
-        <Button 
-          title="Login"
-          onPress={() => {}}
-          enabled={true}
-          loading={false}
-        />
-        <Button 
-          title="Criar conta gratuita"
-          color={theme.colors.background_secundary}
-          light
-          onPress={() => {}}
-          enabled={true}
-          loading={false}
-        />
-      </Footer>
-    </Container>
+        <Footer>
+          <Button 
+            title="Login"
+            onPress={() => {}}
+            enabled={true}
+            loading={false}
+          />
+          <Button 
+            title="Criar conta gratuita"
+            color={theme.colors.background_secundary}
+            light
+            onPress={() => {}}
+            enabled={true}
+            loading={false}
+          />
+        </Footer>
+      </Container>
+    </KeyboardAvoidingView>
   )
 }
