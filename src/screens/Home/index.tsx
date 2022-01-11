@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { StatusBar, StyleSheet } from 'react-native';
+import { StatusBar } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useNavigation } from '@react-navigation/native';
 
@@ -16,7 +16,6 @@ import { LoadAnimation } from '../../components/LoadAnimation';
 
 import Logo from '../../assets/logo.svg';
 import { CarDTO } from '../../dtos/CarsDTO';
-import theme from '../../styles/theme';
 
 import api from '../../services/api';
 
@@ -76,16 +75,3 @@ export function Home(){
     </Container>
   )
 }
-
-const styles = StyleSheet.create({
-  button: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-  
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    backgroundColor: theme.colors.main,
-  }
-})
