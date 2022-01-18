@@ -11,6 +11,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		3EF519A42797253000A8AB16 /* libWatermelonDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 934546B3277A6BF90073D7E7 /* libWatermelonDB.a */; };
 		934546AD277A6BB60073D7E7 /* wmelon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934546AC277A6BB60073D7E7 /* wmelon.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-rentx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-rentx.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF519A42797253000A8AB16 /* libWatermelonDB.a in Frameworks */,
 				96905EF65AED1B983A6B3ABC /* libPods-rentx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
