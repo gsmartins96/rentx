@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { StatusBar } from 'react-native';
+import { Alert, StatusBar } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useNavigation } from '@react-navigation/native';
+import { useNetInfo } from '@react-native-community/netinfo';
 
 import {
   Container,
@@ -11,18 +12,20 @@ import {
   CarList,
 } from './styles'
 
-import { Car } from '../../components/Car';
-import { LoadAnimation } from '../../components/LoadAnimation';
-
 import Logo from '../../assets/logo.svg';
 import { CarDTO } from '../../dtos/CarsDTO';
 
 import api from '../../services/api';
 
+import { Car } from '../../components/Car';
+import { LoadAnimation } from '../../components/LoadAnimation';
+
 export function Home(){
   const navigation = useNavigation<any>();
   const [cars, setCars] = useState<CarDTO[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const netInfo = useNetInfo();
 
   function handleNavigateCarDetails(car: CarDTO){
     navigation.navigate('CarDetails', {car});
@@ -51,6 +54,14 @@ export function Home(){
       isMounted = false;
     }
   }, [])
+
+  useEffect(() => {
+    if(netInfo.isConnected){
+      Alert.alert('Você está conectado');
+    }else{
+      Alert.alert('Desconectado');
+    }
+  }, [netInfo.isConnected])
 
   return (
     <Container>
