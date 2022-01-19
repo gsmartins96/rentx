@@ -87,6 +87,24 @@ export function Profile(){
     }
   }
 
+  async function handleSignOut(){
+    Alert.alert(
+      'Tem certeza?', 
+      'Se você sair, irá precisar de internet para se conectar novamente',
+      [
+        {
+          text: 'Cancelar',
+          onPress: () => {},
+          style: 'cancel'
+        },
+        {
+          text: 'Sair',
+          onPress: () => signOut(),
+        }
+      ]
+    )
+  }
+
   return (
     <KeyboardAvoidingView behavior='position' enabled>
       <TouchableNativeFeedback onPress={Keyboard.dismiss}>
@@ -95,7 +113,7 @@ export function Profile(){
             <HeaderTop>
               <BackButton color={theme.colors.shape} />
               <HeaderTitle>Editar Perfil</HeaderTitle>
-              <LogoutButton onPress={signOut} > 
+              <LogoutButton onPress={handleSignOut} > 
                 <Feather name='power' size={24} color={theme.colors.shape} />
               </LogoutButton>
             </HeaderTop>
