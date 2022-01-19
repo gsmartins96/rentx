@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, TouchableNativeFeedback, Keyboard } from 'react-native';
+import { KeyboardAvoidingView, TouchableNativeFeedback, Keyboard, Alert } from 'react-native';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import * as ImagePicker from 'expo-image-picker';
 import { Feather } from '@expo/vector-icons'
+import * as Yup from 'yup';
 import {
   Container,
   Header,
@@ -26,9 +27,11 @@ import theme from '../../styles/theme'
 import { Input } from '../../components/Input';
 import { InputPassword } from '../../components/InputPassword';
 import { BackButton } from '../../components/BackButton';
+import { Button } from '../../components/Button';
+import is from 'date-fns/esm/locale/is/index.js';
 
 export function Profile(){
-  const { user, signOut } = useAuth();
+  const { user, signOut, updateUser } = useAuth();
   const [option, setOption] = useState<'dataEdit' | 'passwordEdit'>('dataEdit');
   const [avatar, setAvatar] = useState(user.avatar);
   const [name, setName] = useState(user.name);
@@ -52,6 +55,35 @@ export function Profile(){
 
     if(result.uri){
       setAvatar(result.uri)
+    }
+  }
+
+  async function handleProfileUpdate(){
+    try {
+      const schema = Yup.object().shape({
+        driverLicense: Yup.string().required('CNH Obrigatória'),
+        name: Yup.string().required('Nome não pode ficar em branco'),
+      })
+
+      const data = { name, driverLicense };
+      await schema.validate(data)
+
+      await updateUser({
+        id: user.id,
+        user_id: user.id,
+        email: user.email,
+        name,
+        driver_license: driverLicense,
+        avatar,
+        token: user.token
+      });
+
+      Alert.alert('Perfil atualizado');
+    } catch (error) {
+      if(error instanceof Yup.ValidationError){
+        Alert.alert('Opa', error.message);
+      }
+      Alert.alert('Não foi possível atualizar o perfil');
     }
   }
 
@@ -134,6 +166,11 @@ export function Profile(){
                 />
               </Section>
             }
+
+            <Button 
+              title='Salvar alterações'
+              onPress={handleProfileUpdate}
+            />
           </Content>
         </Container>
       </TouchableNativeFeedback>

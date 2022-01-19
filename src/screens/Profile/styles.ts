@@ -7,7 +7,7 @@ interface OptionProps {
   active: boolean;
 }
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   background: ${({ theme }) => theme.colors.background_primary};
 `;
 
