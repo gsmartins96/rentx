@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { KeyboardAvoidingView, TouchableNativeFeedback, Keyboard, Alert } from 'react-native';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import * as ImagePicker from 'expo-image-picker';
+import { useNetInfo } from '@react-native-community/netinfo';
 import { Feather } from '@expo/vector-icons'
 import * as Yup from 'yup';
 import {
@@ -36,8 +37,12 @@ export function Profile(){
   const [avatar, setAvatar] = useState(user.avatar);
   const [name, setName] = useState(user.name);
   const [driverLicense, setDriverLicense] = useState(user.driver_license);
+  const netInfo = useNetInfo();
 
   function handleOptionChange(optionSelected: 'dataEdit' | 'passwordEdit'){
+    if(netInfo.isConnected === false && optionSelected === 'passwordEdit'){
+      Alert.alert('Você está off-line.', 'Conecte-se para alterar a senha.');
+    }
     setOption(optionSelected)
   }
 
